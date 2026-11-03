@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sidefolk: a small companion for your Mac desktop</title>
+  <meta name="description" content="A small companion that lives on your Mac's desktop. It remembers, reminds and keeps watch, plays a game with you, and your AI agents can talk to it.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+    /* Lantern's colours (docs/DESIGN.md in the app's repository). */
+    :root {
+      --ink: #0F1E36;
+      --ink-muted: #465063;
+      --canvas: #F4F5F7;
+      --accent: #0B7783;
+      --on-accent: #FFFFFF;
+      --pool: rgba(46, 212, 217, 0.32);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #EEF2F8;
+        --ink-muted: #B3BDCC;
+        --canvas: #0D121C;
+        --accent: #3CD6DB;
+        --on-accent: #0D121C;
+        --pool: rgba(60, 214, 219, 0.26);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 48px 16px;
+      background: var(--canvas);
+      color: var(--ink);
+      font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      text-align: center;
+    }
+    main { width: 100%; max-width: 560px; }
+    .companion { position: relative; width: 156px; margin: 0 auto 28px; padding-bottom: 14px; }
+    /* The light at its feet: what the companion stands on in the app. */
+    .companion::after {
+      content: "";
+      position: absolute;
+      inset: auto -44px 0;
+      height: 44px;
+      border-radius: 50%;
+      background: radial-gradient(closest-side, var(--pool), transparent);
+    }
+    .companion img { position: relative; z-index: 1; display: block; width: 100%; height: auto; }
+    .wordmark { display: block; width: 188px; height: auto; margin: 0 auto 28px; }
+    h1 { margin: 0 0 12px; font-size: clamp(28px, 6vw, 38px); line-height: 1.15; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
+    .lead { margin: 0 0 28px; color: var(--ink-muted); text-wrap: pretty; }
+    .button {
+      display: inline-block;
+      padding: 11px 20px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: var(--on-accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .button:hover { filter: brightness(1.08); }
+    .button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+    .note { margin: 24px 0 0; color: var(--ink-muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="companion">
+      <img src="images/mochi.png" width="520" height="849" alt="Mochi, a small white rabbit with navy ears and a mint scarf">
+    </div>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="images/wordmark-reversed.svg">
+      <img class="wordmark" src="images/wordmark.svg" width="600" height="178" alt="Sidefolk">
+    </picture>
+    <h1>A small companion that lives on your Mac's desktop.</h1>
+    <p class="lead">It remembers, reminds and keeps watch, plays a game with you, and your AI agents can talk to it.</p>
+    <a class="button" href="https://github.com/ghassenbrg/sidefolk">See Sidefolk on GitHub</a>
+    <p class="note">Version 0.1.0 isn't released yet. macOS 15 or later, Apple silicon.</p>
+  </main>
+</body>
+</html>
