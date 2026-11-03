@@ -76,6 +76,7 @@ The theme redesign will change Home, Today and the sidebar. So cards are drawn i
 - The first screen has a generated scene, light and dark, and each state has its own generated pose. The poses show a state's mood; the app's Mochi doesn't use a laptop or a book.
 - The header is navy on every page with the reversed logo: the logo's turquoise only reads on a dark surface.
 - Home's extensions are the founder's picks: Sideflow, Clipboard, Miraya, Your Mac and Playtime. Sideflow carries no "not out yet" label, because it ships soon. The rest are named in one line and listed on the Extensions page.
+- Formatic is shown as "Coming soon", in the words of its own session: it has no release date yet. Don't mention its ring (not built), Finder's right-click (not tried in a real Finder) or video (not supported), and don't say "nothing leaves your Mac". Remove the label when it reaches the gallery.
 - Every companion in the gallery is shown. A switch sets light or dark, and it starts on the browser's setting.
 - Art placed over anything is generated transparent, never cut out, and checked on harsh backgrounds with the `codex-imagegen` skill's `check_transparent.py`, looking at the sheet. The app's older helper-folk cutouts failed this and were replaced here.
 - Text over the scene is measured against the real pixels at five window sizes, because the page audit can't check text on an image.
