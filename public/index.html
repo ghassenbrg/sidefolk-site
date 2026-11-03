@@ -4,86 +4,192 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sidefolk: a small companion for your Mac desktop</title>
-  <meta name="description" content="A small companion that lives on your Mac's desktop. It remembers, reminds and keeps watch, plays a game with you, and your AI agents can talk to it.">
-  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="A small companion that lives on your Mac's desktop. It remembers, reminds and keeps watch, and your AI agents can talk to it. Extensions give it more to do.">
+  <link rel="canonical" href="https://getsidefolk.com/">
+  <meta property="og:title" content="Sidefolk: a small companion for your Mac desktop">
+  <meta property="og:description" content="It remembers, reminds and keeps watch, and your AI agents can talk to it.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getsidefolk.com/">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <style>
-    /* Lantern's colours (docs/DESIGN.md in the app's repository). */
-    :root {
-      --ink: #0F1E36;
-      --ink-muted: #465063;
-      --canvas: #F4F5F7;
-      --accent: #0B7783;
-      --on-accent: #FFFFFF;
-      --pool: rgba(46, 212, 217, 0.32);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --ink: #EEF2F8;
-        --ink-muted: #B3BDCC;
-        --canvas: #0D121C;
-        --accent: #3CD6DB;
-        --on-accent: #0D121C;
-        --pool: rgba(60, 214, 219, 0.26);
-      }
-    }
-    * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      min-height: 100svh;
-      display: grid;
-      place-items: center;
-      padding: 48px 16px;
-      background: var(--canvas);
-      color: var(--ink);
-      font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      text-align: center;
-    }
-    main { width: 100%; max-width: 560px; }
-    .companion { position: relative; width: 156px; margin: 0 auto 28px; padding-bottom: 14px; }
-    /* The light at its feet: what the companion stands on in the app. */
-    .companion::after {
-      content: "";
-      position: absolute;
-      inset: auto -44px 0;
-      height: 44px;
-      border-radius: 50%;
-      background: radial-gradient(closest-side, var(--pool), transparent);
-    }
-    .companion img { position: relative; z-index: 1; display: block; width: 100%; height: auto; }
-    .wordmark { display: block; width: 188px; height: auto; margin: 0 auto 28px; }
-    h1 { margin: 0 0 12px; font-size: clamp(28px, 6vw, 38px); line-height: 1.15; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
-    .lead { margin: 0 0 28px; color: var(--ink-muted); text-wrap: pretty; }
-    .button {
-      display: inline-block;
-      padding: 11px 20px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: var(--on-accent);
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .button:hover { filter: brightness(1.08); }
-    .button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
-    .note { margin: 24px 0 0; color: var(--ink-muted); font-size: 14px; }
-  </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <main>
-    <div class="companion">
-      <img src="images/mochi.png" width="318" height="520" alt="Mochi, a small white rabbit with navy ears and a mint scarf">
+<a class="skip" href="#main">Skip to the content</a>
+<header class="nav over">
+  <a class="logo" href="./"><img src="images/wordmark-reversed.svg" width="600" height="178" alt="Sidefolk"></a>
+  <nav class="links" aria-label="Main"><a href="#folk">The folk</a><a href="extensions/">Extensions</a><a href="#build">Build your own</a><a href="privacy/">Privacy</a></nav>
+  <a class="btn btn-primary btn-small" href="try/">Try the test build</a>
+  <details class="menu"><summary>Menu</summary><div><a href="#folk">The folk</a><a href="extensions/">Extensions</a><a href="#build">Build your own</a><a href="privacy/">Privacy</a><a href="try/">Try the test build</a></div></details>
+</header>
+
+<main id="main">
+<div class="desk">
+  <h1>A small companion that lives on your Mac's desktop.</h1>
+  <p class="lead">It remembers, reminds and keeps watch, and your AI agents can talk to it.</p>
+  <div class="cta"><a class="btn btn-primary" href="try/">Try the test build</a><a class="btn btn-quiet" href="https://github.com/ghassenbrg/sidefolk">See it on GitHub</a></div>
+  <p class="note">0.1.0 isn't released yet. <a href="https://github.com/ghassenbrg/sidefolk#what-isnt-done-yet">What isn't done yet</a>. macOS 15 or later, Apple silicon.</p>
+  <div class="scene">
+    <div class="stack" aria-hidden="true">
+      <div class="card"><img src="images/folks/scout.webp" width="44" height="44" alt=""><div><b>example.com/pricing changed</b><span>Scout · watch · 08:22</span></div></div>
+      <div class="card"><img src="images/folks/tempo.webp" width="44" height="44" alt=""><div><b>Stretch and refill water</b><span>Tempo · reminder · 08:32</span></div></div>
+      <div class="card"><img src="images/folks/byte.webp" width="44" height="44" alt=""><div><b>Codex asks: deploy to staging?</b><span>Codex · question · 08:36</span></div><span class="act">Answer</span></div>
     </div>
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="images/wordmark-reversed.svg">
-      <img class="wordmark" src="images/wordmark.svg" width="600" height="178" alt="Sidefolk">
-    </picture>
-    <h1>A small companion that lives on your Mac's desktop.</h1>
-    <p class="lead">It remembers, reminds and keeps watch, plays a game with you, and your AI agents can talk to it.</p>
-    <a class="button" href="https://github.com/ghassenbrg/sidefolk">See Sidefolk on GitHub</a>
-    <p class="note">Version 0.1.0 isn't released yet. macOS 15 or later, Apple silicon.</p>
-  </main>
+    <div class="ground">
+      <img class="helper" src="images/folks/scout.webp" width="300" height="300" alt="">
+      <div class="stand wait"><img src="images/mochi.webp" width="560" height="944" alt="Mochi, a white rabbit with navy ears and a turquoise scarf, waving"><span class="count" aria-hidden="true">3</span></div>
+    </div>
+  </div>
+</div>
+
+<section class="sec">
+  <p class="eyebrow">Always in the corner of your eye</p>
+  <h2>Its light says how things are.</h2>
+  <p class="sub">You can tell at a glance, without opening anything. Between tasks it has a life of its own, and it holds still while you type.</p>
+  <div class="states">
+    <div class="state"><div class="stand"><img src="images/states/working.webp" width="840" height="840" alt=""></div><b>Working</b><span>An aqua light while it's on something.</span></div>
+    <div class="state"><div class="stand wait"><img src="images/states/waiting.webp" width="840" height="840" alt=""><span class="count" aria-hidden="true">3</span></div><b>Waiting on you</b><span>Amber, with a count on its shoulder.</span></div>
+    <div class="state"><div class="stand focus"><img src="images/states/focus.webp" width="840" height="840" alt=""></div><b>Focus</b><span>Grey. Small news comes back later as one card.</span></div>
+    <div class="state"><div class="stand out"><img src="images/states/quiet.webp" width="840" height="840" alt=""></div><b>Quiet</b><span>The light is out. Only the urgent gets through.</span></div>
+  </div>
+</section>
+
+<div class="castintro" id="folk">
+  <p class="eyebrow">Meet the folk</p>
+  <h2>A few helpers stand beside it.</h2>
+  <p class="sub">Tell it things in plain words, with <span class="keys">⌘⇧Space</span> or a click. The basics finish on your Mac in a moment, with no AI. Without AI it understands English; with one, ask in any language.</p>
+  <nav class="cast" aria-label="The helpers">
+    <a href="#tempo"><img src="images/folks/tempo.webp" width="74" height="74" alt="">Tempo</a>
+    <a href="#scout"><img src="images/folks/scout.webp" width="74" height="74" alt="">Scout</a>
+    <a href="#pip"><img src="images/folks/pip.webp" width="74" height="74" alt="">Pip</a>
+    <a href="#byte"><img src="images/folks/byte.webp" width="74" height="74" alt="">Byte</a>
+    <a href="#guard"><img src="images/folks/guard.webp" width="74" height="74" alt="">Guard</a>
+  </nav>
+</div>
+
+<section class="folk" id="tempo" style="background:var(--tempo)">
+  <img class="pic" src="images/folks/tempo.webp" width="300" height="300" alt="Tempo, a soft blue folk holding a calendar">
+  <div><div class="name">Tempo reminds</div><h3>It tells you on time.</h3><p>Natural times and repeats, snooze and done, a summary of what you missed, and a morning brief.</p></div>
+  <div class="show">
+    <div class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="7"/><path d="M12 9v4l2.5 2M5 5 3 7M19 5l2 2"/></svg></span><div><span class="said">“remind me tomorrow at 9 to send the deck”</span><b>Send the deck</b><span>Tomorrow 09:00</span></div><span class="act">Undo</span></div>
+  </div>
+</section>
+<section class="folk flip" id="scout" style="background:var(--scout)">
+  <div><div class="name">Scout watches</div><h3>It keeps an eye out.</h3><p>A page, meaningful changes only. A site going down or coming back. A file appearing, a program finishing, for as long as Sidefolk is running.</p></div>
+  <div class="show">
+    <div class="card"><img src="images/folks/scout.webp" width="44" height="44" alt=""><div><span class="said">“watch example.com/pricing”</span><b>Watching example.com/pricing every 30 min</b><span>I'll tell you when it changes</span></div></div>
+    <div class="card"><img src="images/folks/scout.webp" width="44" height="44" alt=""><div><b>report.pdf appeared</b><span>Scout · watch · 08:40</span></div></div>
+  </div>
+  <img class="pic" src="images/folks/scout.webp" width="300" height="300" alt="Scout, a yellow folk with a magnifying glass">
+</section>
+<section class="folk" id="pip" style="background:var(--pip)">
+  <img class="pic" src="images/folks/pip.webp" width="300" height="300" alt="Pip, a coral folk">
+  <div><div class="name">Pip saves</div><h3>It remembers what you tell it.</h3><p>Notes, ideas, lists and links go into a notebook that stays on your Mac. Drop a file or a link on the companion to save it.</p></div>
+  <div class="show"><div class="card"><img src="images/folks/pip.webp" width="44" height="44" alt=""><div><span class="said">“add oat milk to my groceries list”</span><b>Saved to Groceries › Tasks</b><span>Oat milk</span></div><span class="act">Undo</span></div></div>
+</section>
+<section class="folk flip" id="byte" style="background:var(--byte)">
+  <div><div class="name">Byte follows your agents</div><h3>Your agents can reach you.</h3><p>Claude Code, Codex and any MCP client can leave a note or ask a question. Files, the clipboard, the web and commands are never offered to them, and they can never answer an approval.</p></div>
+  <div class="show">
+    <div class="card"><img src="images/folks/byte.webp" width="44" height="44" alt=""><div><b>Codex asks: deploy to staging?</b><span>Codex · question · 08:36</span></div><span class="act">Answer</span></div>
+    <div class="term">$ sidefolk run -- npm test</div>
+    <div class="card"><img src="images/folks/byte.webp" width="44" height="44" alt=""><div><b>npm test failed (exit 1)</b><span>Byte · command · 09:12</span></div></div>
+  </div>
+  <img class="pic" src="images/folks/byte.webp" width="300" height="300" alt="Byte, a blue folk with round glasses and a laptop">
+</section>
+<section class="folk" id="guard" style="background:var(--guard)">
+  <img class="pic" src="images/folks/guard.webp" width="300" height="300" alt="Guard, a green folk with a cap and a shield">
+  <div><div class="name">Guard checks first</div><h3>It asks first, as often as you choose.</h3><p>A permission slip says what it touches. Everything it did is in History, and most of it can be undone.</p></div>
+  <div class="slip"><div class="because">Part of what you asked Mochi to do.</div><div class="who"><img src="images/folks/guard.webp" width="50" height="50" alt=""><div><small>Mochi wants to</small><b>Move 3 files?</b><small>Move 3 items to ~/Downloads/Invoices</small></div></div><div class="actions" aria-hidden="true"><span class="btn btn-quiet btn-small">Not now</span><span class="btn btn-primary btn-small">Allow</span></div></div>
+</section>
+
+<section class="sec" id="ext">
+  <p class="eyebrow">Extensions</p>
+  <h2>Give your companion more to do.</h2>
+  <p class="sub">Extensions bring new tools, things to watch, pages in Home, tiles on Today, and games. Pick what you want from the gallery, and leave the rest.</p>
+  <div class="tiles">
+    <div class="tile"><img src="images/extensions/sideflow.webp" width="52" height="52" alt=""><div><b>Sideflow</b><span>Teach your companion a routine. Practise it first, then let it run by itself.</span><em><span class="soon">Not out yet</span><a href="#sideflow">How it works</a></em></div></div>
+    <div class="tile"><img src="images/extensions/clipboard.webp" width="52" height="52" alt=""><div><b>Clipboard</b><span>What you copy, a shortcut away from any app, searchable and pinnable. Copies from password managers are never kept.</span></div></div>
+    <div class="tile"><img src="images/extensions/keep-awake.webp" width="52" height="52" alt=""><div><b>Keep Awake</b><span>Keeps your Mac awake for as long as you say, until a time, or while an app like Zoom is open. It lets go when the battery runs low.</span></div></div>
+    <div class="tile"><img src="images/extensions/pdf.webp" width="52" height="52" alt=""><div><b>PDF Tools</b><span>A PDF's details and text, several combined into one, and some pages saved as a new PDF. Your originals stay as they are.</span></div></div>
+  </div>
+  <p class="alsoin">Also in the gallery: Your Mac, Playtime, Images, Git, Feeds and more.</p>
+  <p class="morelink"><a href="extensions/">See every extension</a></p>
+  <div class="assure"><div>From the gallery, each one is a signed pack, downloaded only when you pick it.</div><div>Each runs in a macOS sandbox, with only what it asked for. Internet access means the whole internet.</div><div>You see a gallery pick's permissions in plain words before you install.</div></div>
+</section>
+
+<section class="sec flowsec" id="sideflow">
+  <div class="flowgrid">
+    <div>
+      <div class="flowhead"><img src="images/extensions/sideflow.webp" width="44" height="44" alt=""><strong>Sideflow</strong><span class="soon">Not out yet</span></div>
+      <h2>Teach your companion a routine.</h2>
+      <p class="sub">Sideflow isn't in the gallery yet. Say what you repeat, if you've connected an AI, or build it step by step. A flow can reach your extensions, your MCP servers and nearly everything Sidefolk can do.</p>
+      <ul class="why">
+        <li><b>You can practise it first.</b> A practice run reads for real, changes nothing, and says what it would have done.</li>
+        <li><b>You read it once.</b> Then it runs by itself while Sidefolk is running and your Mac is awake. MCP servers, commands and deletions still ask every time.</li>
+        <li><b>Every run is a story.</b> You can read what happened, with a way forward when it stops.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="builder" role="img" aria-label="A flow called Morning brief, with four steps: every weekday at 08:30, get today's plan, write three lines with the AI, tell me.">
+        <div class="bhead"><b>Morning brief</b><i>Practised</i></div>
+        <div class="bsub">Every weekday at 08:30: Get today's plan. Write three lines with the AI. Tell me.</div>
+        <div class="step"><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M8 3v4M16 3v4"/></svg></span><div><b>Trigger</b><span class="t">Every weekday at 08:30</span></div><span class="ok">✓</span></div>
+        <div class="join"></div>
+        <div class="step"><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="16" rx="3"/><path d="M9 9h6M9 13h6"/></svg></span><div><b>Action</b><span class="t">Get today's plan</span></div><span class="ok">✓</span></div>
+        <div class="join"></div>
+        <div class="step"><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l1.8 5.2L19 11l-5.2 1.8L12 18l-1.8-5.2L5 11l5.2-1.8z"/></svg></span><div><b>Write with AI</b><span class="t">Write three lines with the AI</span></div><span class="ok">✓</span></div>
+        <div class="join"></div>
+        <div class="step dash"><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 21h4"/></svg></span><div><b>Action</b><span class="t">Tell me</span></div><span class="would">Would, not done</span></div>
+      </div>
+      <p class="caption">How it will look. Not out yet.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="build">
+  <p class="eyebrow">Build your own</p>
+  <h2>If it isn't there, make it.</h2>
+  <p class="sub">An extension is a folder with a manifest and a small program that speaks MCP. Ask for one or write one, or bring an MCP server you already use.</p>
+  <div class="ways">
+    <div class="way"><b>Ask for it</b><p>With an AI connected, ask for something it can't do yet. It describes the extension, waits for your yes, writes a draft and tries it with every permission removed. Nothing is installed until you click Install.</p></div>
+    <div class="way"><b>Write it yourself</b><p>The smallest working extension is about 50 lines of Python. Copy it to start, or use the skill for Claude Code or Codex, then choose Settings › Add-ons › Install from folder. For now an extension can't keep an API key, and it gets the whole internet or none of it.</p><div class="term">hello-folk/
+  sidefolk-extension.json
+  main.py
+  icon.pdf</div><a href="https://github.com/ghassenbrg/sidefolk/blob/main/docs/EXTENSIONS.md">Read the extension guide</a></div>
+    <div class="way"><b>Bring an MCP server</b><p>Add one you already use in Settings. <strong>It runs outside Sidefolk's sandbox, with your full permissions</strong>, and it's labelled that way.</p></div>
+  </div>
+</section>
+
+<section class="sec band"><div class="family">
+  <img src="images/family.webp" width="800" height="740" alt="Mochi hugging three helper folks: Byte, Seed and Pip">
+  <div>
+    <p class="eyebrow">Make it yours</p>
+    <h2>Pick a companion and give it a name.</h2>
+    <p class="sub">Mochi and Spark are built in, in 3D or 2D, and more wait in the gallery. In ten languages.</p>
+    <div class="troupe">
+      <figure><img src="images/companions/spark.webp" width="78" height="78" alt=""><figcaption>Spark</figcaption></figure>
+      <figure><img src="images/companions/kiko.webp" width="78" height="78" alt=""><figcaption>Kiko</figcaption></figure>
+      <figure><img src="images/companions/ember.webp" width="78" height="78" alt=""><figcaption>Ember</figcaption></figure>
+      <figure><img src="images/companions/nimbo.webp" width="78" height="78" alt=""><figcaption>Nimbo</figcaption></figure>
+      <figure><img src="images/companions/iris.webp" width="78" height="78" alt=""><figcaption>Iris</figcaption></figure>
+      <figure><img src="images/companions/noor.webp" width="78" height="78" alt=""><figcaption>Noor</figcaption></figure>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec">
+  <p class="eyebrow">Private by default</p>
+  <h2>What it keeps stays on your Mac.</h2>
+  <p class="sub">Everything it keeps is in one folder. Some things do leave, such as your request to the AI you chose, and the <a href="privacy/">privacy page</a> says exactly what, and when.</p>
+  <div class="facts"><div class="fact">No account</div><div class="fact">No telemetry</div><div class="fact">No analytics</div><div class="fact">No crash reporter</div></div>
+</section>
+
+<section class="sec end band">
+  <h2>Say hello to Mochi.</h2>
+  <p class="sub">Signed test builds are on GitHub, and once installed Sidefolk finds the next ones itself.</p>
+  <div class="cta"><a class="btn btn-primary" href="try/">Try the test build</a><a class="btn btn-quiet" href="https://github.com/ghassenbrg/sidefolk#what-isnt-done-yet">What isn't done yet</a></div>
+</section>
+</main>
+<footer class="foot"><span>Sidefolk</span><a href="privacy/">Privacy</a><a href="extensions/">Extensions</a><a href="https://github.com/ghassenbrg/sidefolk/releases">Releases</a><a href="https://github.com/ghassenbrg/sidefolk">GitHub</a><span class="legal">Not affiliated with Apple, Anthropic or OpenAI.</span></footer>
 </body>
 </html>

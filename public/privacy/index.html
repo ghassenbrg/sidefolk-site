@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy · Sidefolk</title>
+  <meta name="description" content="Sidefolk is local first. What leaves your Mac, when, and what stays.">
+  <link rel="canonical" href="https://getsidefolk.com/privacy/">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="nav">
+  <a class="logo" href="../"><img src="../images/wordmark-reversed.svg" width="600" height="178" alt="Sidefolk"></a>
+  <nav class="links" aria-label="Main"><a href="../#folk">The folk</a><a href="../extensions/">Extensions</a><a href="../#build">Build your own</a><a href="./" aria-current="page">Privacy</a></nav>
+  <a class="btn btn-primary btn-small" href="../try/">Try the test build</a>
+  <details class="menu"><summary>Menu</summary><div><a href="../#folk">The folk</a><a href="../extensions/">Extensions</a><a href="../#build">Build your own</a><a href="./" aria-current="page">Privacy</a><a href="../try/">Try the test build</a></div></details>
+</header>
+<div class="reading">
+  <nav class="toc" aria-label="On this page"><a href="#leaves">What leaves your Mac</a><a href="#stays">What stays on your Mac</a><a href="#choice">Your data, your choice</a><a href="#site">This website</a></nav>
+  <main id="main">
+    <h1>Privacy</h1>
+    <p class="lead">Sidefolk is local first. Everything it keeps is in one folder on your Mac. There is no account, no telemetry, no analytics and no crash reporter.</p>
+    <h2 id="leaves">What leaves your Mac, and when</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>What</th><th>Where it goes</th><th>When</th></tr></thead>
+      <tbody>
+      <tr><td>Your request and its context: your words, the date and time zone, your town if you set your location, the name of the app in front, what it keeps about you, notes that match, what's running, and the last few minutes of the conversation</td><td>The AI you chose: Anthropic or OpenAI through Claude Code or Codex (your account), an API provider, or nowhere if it's Ollama or LM Studio on your Mac</td><td>Only for requests that need AI. Settings › Brain shows exactly what was last sent.</td></tr>
+      <tr><td>A request for the page</td><td>That site</td><td>When you ask it to read or watch a page or a site, or when its AI wants to read a page to answer you (an address you didn't type asks you first, unless you chose Auto or Full access or allowed that site)</td></tr>
+      <tr><td>The place you asked about, or your own town's coordinates (rounded)</td><td>Open-Meteo (no account, no key)</td><td>When you ask for the weather</td></tr>
+      <tr><td>Sidefolk's version</td><td>GitHub</td><td>Once a day while update checks are on, and when you click Check for Updates…</td></tr>
+      <tr><td>The gallery's catalog and the add-ons you pick</td><td>GitHub</td><td>When you open the Gallery, pick an add-on, or add-ons look for updates</td></tr>
+      <tr><td>A request for the list of models, or one tiny test prompt</td><td>Your AI provider</td><td>When you pick a provider in Settings, or click Test</td></tr>
+      <tr><td>The words your companion says aloud</td><td>ElevenLabs, with your key</td><td>Only if you choose an ElevenLabs voice</td></tr>
+      <tr><td>Whatever that extension sends</td><td>The internet</td><td>Only extensions whose install sheet said they use the internet</td></tr>
+      <tr><td>Whatever that server does</td><td>Anywhere</td><td>MCP servers you add yourself run outside Sidefolk's sandbox, and are labelled so</td></tr>
+      </tbody>
+    </table></div>
+    <h2 id="stays">What stays on your Mac</h2>
+    <p>Your data in one folder, readable only by you. Logs for 7 days, with secrets taken out. API keys in your Keychain. Conversations are kept 7 days (you choose how long) and can be deleted from History. Sidefolk never reads your screen or other apps' windows; it knows the name of the app in front.</p>
+    <h2 id="choice">Your data, your choice</h2>
+    <p>Settings › Trust exports everything as JSON or deletes everything, Keychain items included.</p>
+    <h2 id="site">This website</h2>
+    <p>This site has no accounts, cookies, analytics or trackers, and it loads nothing from other services. It's hosted on GitHub Pages, and GitHub may log visitors' IP addresses to keep the service running.</p>
+  </main>
+</div>
+<footer class="foot"><span>Sidefolk</span><a href="./">Privacy</a><a href="../extensions/">Extensions</a><a href="https://github.com/ghassenbrg/sidefolk/releases">Releases</a><a href="https://github.com/ghassenbrg/sidefolk">GitHub</a><span class="legal">Not affiliated with Apple, Anthropic or OpenAI.</span></footer>
+</body>
+</html>
