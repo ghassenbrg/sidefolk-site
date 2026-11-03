@@ -57,7 +57,7 @@ The references were checked by date on 2026-11-03, because several in the reposi
 | Helper folks' art (2026-10-31) | Current; no session is changing the characters | Used |
 | Companion portraits, `sidefolk-addons` `origin/main` | Current | Used |
 | Extension words and icons, `sidefolk-addons` `origin/main` manifests | Current | Used |
-| Sideflow, `sidefolk-addons` `team/sideflow` | Built but not merged or published | Shown only as "Not out yet"; its builder is drawn to match its screens |
+| Sideflow, `sidefolk-addons` `team/sideflow` | Built but not merged or published | Shown as available by the founder's decision (2026-11-03), ahead of its release; its builder is drawn to match its screens |
 | `docs/launch/screenshots` (2026-10-27) | Out of date | Not used |
 | `docs/screenshots` (2026-11-01) | About to go out of date | Not used |
 | `docs/launch/LANDING-PAGE.md` | Outline is useful; some counts are behind the app | Structure only, every fact rechecked |
@@ -75,5 +75,7 @@ The theme redesign will change Home, Today and the sidebar. So cards are drawn i
 
 - The first screen has a generated scene, light and dark, and each state has its own generated pose. The poses show a state's mood; the app's Mochi doesn't use a laptop or a book.
 - The header is navy on every page with the reversed logo: the logo's turquoise only reads on a dark surface.
-- Home's extensions lead with what adds the most: Sideflow (labelled "Not out yet" until it ships), Clipboard, Keep Awake, PDF Tools. The rest are named in one line and listed on the Extensions page.
+- Home's extensions are the founder's picks: Sideflow, Clipboard, Miraya, Your Mac and Playtime. Sideflow carries no "not out yet" label, because it ships soon. The rest are named in one line and listed on the Extensions page.
+- Every companion in the gallery is shown. A switch sets light or dark, and it starts on the browser's setting.
+- Art placed over anything is generated transparent, never cut out, and checked on harsh backgrounds with the `codex-imagegen` skill's `check_transparent.py`, looking at the sheet. The app's older helper-folk cutouts failed this and were replaced here.
 - Text over the scene is measured against the real pixels at five window sizes, because the page audit can't check text on an image.

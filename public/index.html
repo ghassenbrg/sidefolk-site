@@ -12,6 +12,7 @@
   <meta property="og:url" content="https://getsidefolk.com/">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script src="theme.js"></script>
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
@@ -19,6 +20,7 @@
 <header class="nav over">
   <a class="logo" href="./"><img src="images/wordmark-reversed.svg" width="600" height="178" alt="Sidefolk"></a>
   <nav class="links" aria-label="Main"><a href="#folk">The folk</a><a href="extensions/">Extensions</a><a href="#build">Build your own</a><a href="privacy/">Privacy</a></nav>
+  <button class="theme-toggle" type="button" hidden></button>
   <a class="btn btn-primary btn-small" href="try/">Try the test build</a>
   <details class="menu"><summary>Menu</summary><div><a href="#folk">The folk</a><a href="extensions/">Extensions</a><a href="#build">Build your own</a><a href="privacy/">Privacy</a><a href="try/">Try the test build</a></div></details>
 </header>
@@ -106,13 +108,14 @@
   <p class="eyebrow">Extensions</p>
   <h2>Give your companion more to do.</h2>
   <p class="sub">Extensions bring new tools, things to watch, pages in Home, tiles on Today, and games. Pick what you want from the gallery, and leave the rest.</p>
-  <div class="tiles">
-    <div class="tile"><img src="images/extensions/sideflow.webp" width="52" height="52" alt=""><div><b>Sideflow</b><span>Teach your companion a routine. Practise it first, then let it run by itself.</span><em><span class="soon">Not out yet</span><a href="#sideflow">How it works</a></em></div></div>
+  <div class="tiles picks">
+    <div class="tile wide"><img src="images/extensions/sideflow.webp" width="52" height="52" alt=""><div><b>Sideflow</b><span>Teach your companion a routine: say what you repeat, practise it once, then let it run by itself. It can reach your extensions, your MCP servers and nearly everything Sidefolk can do.</span><em><a href="#sideflow">How it works</a></em></div></div>
     <div class="tile"><img src="images/extensions/clipboard.webp" width="52" height="52" alt=""><div><b>Clipboard</b><span>What you copy, a shortcut away from any app, searchable and pinnable. Copies from password managers are never kept.</span></div></div>
-    <div class="tile"><img src="images/extensions/keep-awake.webp" width="52" height="52" alt=""><div><b>Keep Awake</b><span>Keeps your Mac awake for as long as you say, until a time, or while an app like Zoom is open. It lets go when the battery runs low.</span></div></div>
-    <div class="tile"><img src="images/extensions/pdf.webp" width="52" height="52" alt=""><div><b>PDF Tools</b><span>A PDF's details and text, several combined into one, and some pages saved as a new PDF. Your originals stay as they are.</span></div></div>
+    <div class="tile"><img src="images/extensions/miraya.webp" width="52" height="52" alt=""><div><b>Miraya</b><span>Your Mac's screen on an Android TV running the Miraya app. Tried so far only with an emulator.</span></div></div>
+    <div class="tile"><img src="images/extensions/system-vitals-plus.webp" width="52" height="52" alt=""><div><b>Your Mac</b><span>Everything about this Mac, live and in plain words: processor, memory, disks, battery health, heat and network.</span></div></div>
+    <div class="tile"><img src="images/extensions/playtime.webp" width="52" height="52" alt=""><div><b>Playtime</b><span>A break with your companion: eleven games beside it on the desktop, and five puzzles of your own.</span></div></div>
   </div>
-  <p class="alsoin">Also in the gallery: Your Mac, Playtime, Images, Git, Feeds and more.</p>
+  <p class="alsoin">Also in the gallery: Keep Awake, PDF Tools, Images, Git, Feeds and more.</p>
   <p class="morelink"><a href="extensions/">See every extension</a></p>
   <div class="assure"><div>From the gallery, each one is a signed pack, downloaded only when you pick it.</div><div>Each runs in a macOS sandbox, with only what it asked for. Internet access means the whole internet.</div><div>You see a gallery pick's permissions in plain words before you install.</div></div>
 </section>
@@ -120,9 +123,9 @@
 <section class="sec flowsec" id="sideflow">
   <div class="flowgrid">
     <div>
-      <div class="flowhead"><img src="images/extensions/sideflow.webp" width="44" height="44" alt=""><strong>Sideflow</strong><span class="soon">Not out yet</span></div>
+      <div class="flowhead"><img src="images/extensions/sideflow.webp" width="44" height="44" alt=""><strong>Sideflow</strong></div>
       <h2>Teach your companion a routine.</h2>
-      <p class="sub">Sideflow isn't in the gallery yet. Say what you repeat, if you've connected an AI, or build it step by step. A flow can reach your extensions, your MCP servers and nearly everything Sidefolk can do.</p>
+      <p class="sub">Say what you repeat, if you've connected an AI, or build it step by step. A flow can reach your extensions, your MCP servers and nearly everything Sidefolk can do.</p>
       <ul class="why">
         <li><b>You can practise it first.</b> A practice run reads for real, changes nothing, and says what it would have done.</li>
         <li><b>You read it once.</b> Then it runs by itself while Sidefolk is running and your Mac is awake. MCP servers, commands and deletions still ask every time.</li>
@@ -141,7 +144,7 @@
         <div class="join"></div>
         <div class="step dash"><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 21h4"/></svg></span><div><b>Action</b><span class="t">Tell me</span></div><span class="would">Would, not done</span></div>
       </div>
-      <p class="caption">How it will look. Not out yet.</p>
+      <p class="caption">A flow after its practice run.</p>
     </div>
   </div>
 </section>
@@ -165,14 +168,19 @@
   <div>
     <p class="eyebrow">Make it yours</p>
     <h2>Pick a companion and give it a name.</h2>
-    <p class="sub">Mochi and Spark are built in, in 3D or 2D, and more wait in the gallery. In ten languages.</p>
+    <p class="sub">Mochi and Spark are built in, in 3D or 2D, and ten more wait in the gallery. In ten languages.</p>
     <div class="troupe">
       <figure><img src="images/companions/spark.webp" width="78" height="78" alt=""><figcaption>Spark</figcaption></figure>
-      <figure><img src="images/companions/kiko.webp" width="78" height="78" alt=""><figcaption>Kiko</figcaption></figure>
       <figure><img src="images/companions/ember.webp" width="78" height="78" alt=""><figcaption>Ember</figcaption></figure>
-      <figure><img src="images/companions/nimbo.webp" width="78" height="78" alt=""><figcaption>Nimbo</figcaption></figure>
+      <figure><img src="images/companions/folio.webp" width="78" height="78" alt=""><figcaption>Folio</figcaption></figure>
       <figure><img src="images/companions/iris.webp" width="78" height="78" alt=""><figcaption>Iris</figcaption></figure>
+      <figure><img src="images/companions/kiko.webp" width="78" height="78" alt=""><figcaption>Kiko</figcaption></figure>
+      <figure><img src="images/companions/nimbo.webp" width="78" height="78" alt=""><figcaption>Nimbo</figcaption></figure>
       <figure><img src="images/companions/noor.webp" width="78" height="78" alt=""><figcaption>Noor</figcaption></figure>
+      <figure><img src="images/companions/nori.webp" width="78" height="78" alt=""><figcaption>Nori</figcaption></figure>
+      <figure><img src="images/companions/piko.webp" width="78" height="78" alt=""><figcaption>Piko</figcaption></figure>
+      <figure><img src="images/companions/purl.webp" width="78" height="78" alt=""><figcaption>Purl</figcaption></figure>
+      <figure><img src="images/companions/rune.webp" width="78" height="78" alt=""><figcaption>Rune</figcaption></figure>
     </div>
   </div>
 </div></section>
