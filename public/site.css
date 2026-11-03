@@ -252,7 +252,7 @@ td:first-child { font-weight: 600; width: 42%; }
 .banner b { color: var(--warning); }
 .banner a { color: inherit; font-weight: 600; }
 .getit .stand { justify-self: center; width: 230px; }
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1040px; margin: 0 auto; padding: 16px var(--gutter) 80px; }
+.steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 1040px; margin: 0 auto; padding: 16px var(--gutter) 80px; }
 .howto { padding: 22px; border-radius: 16px; background: var(--card); box-shadow: 0 0 0 1px var(--line); }
 .howto i { display: inline-block; width: 30px; height: 30px; border-radius: 15px; background: var(--accent-soft); font: 800 16px/30px var(--display); text-align: center; }
 .howto b { display: block; margin-top: 10px; font: 800 20px/1.2 var(--display); }
